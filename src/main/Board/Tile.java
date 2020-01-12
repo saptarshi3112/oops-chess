@@ -1,0 +1,135 @@
+package main.Board;
+
+import main.Pieces.Piece;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class Tile extends JPanel {
+
+    Integer xCoordinate, yCoordinate;
+    private JLabel logo;
+    private Piece piece;
+    private Boolean hasNextMove = false;
+    private Boolean isSelectedTile = false;
+    private Boolean opponentTile = false;
+
+    public Tile(int x, int y, Piece p) {
+
+        this.xCoordinate = x;
+        this.yCoordinate = y;
+
+        this.setLayout(new BorderLayout());
+        this.setBorder(BorderFactory.createLineBorder(Color.black));
+        if ((x+y)%2 == 0) {
+            setBackground(Color.WHITE);
+        } else {
+            setBackground(Color.GRAY);
+        }
+
+        if (p != null) {
+            this.setPiece(p);
+        }
+
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        if(this.hasNextMove)
+            this.setBackground(Color.YELLOW);
+        else if (this.isSelectedTile)
+            this.setBackground(Color.GREEN);
+        else if (this.opponentTile)
+            this.setBackground(Color.RED);
+        else {
+            if ((this.xCoordinate+this.yCoordinate)%2 == 0) {
+                setBackground(Color.WHITE);
+            } else {
+                setBackground(Color.GRAY);
+            }
+        }
+    }
+
+    public Boolean getSelectedTile() {
+        return isSelectedTile;
+    }
+
+    public void setSelectedTile(Boolean selectedTile) {
+        isSelectedTile = selectedTile;
+    }
+
+    public JLabel getLogo() {
+        return logo;
+    }
+
+    public Piece getPiece() {
+        return piece;
+    }
+
+    public void setPiece(Piece piece) {
+        this.piece = piece;
+        ImageIcon img = new javax.swing.ImageIcon(this.getClass().getResource(piece.getImgPath()));
+        logo = new JLabel(img);
+        this.add(logo);
+    }
+
+    public Boolean getHasNextMove() {
+        return hasNextMove;
+    }
+
+    public void setHasNextMove(Boolean hasNextMove) {
+        this.hasNextMove = hasNextMove;
+    }
+
+    public void setLogo(JLabel logo) {
+        this.logo = logo;
+    }
+
+    public Integer getXCoordinate() {
+        return xCoordinate;
+    }
+
+    public void setXCoordinate(Integer xCoordinate) {
+        this.xCoordinate = xCoordinate;
+    }
+
+    public Integer getYCoordinate() {
+        return yCoordinate;
+    }
+
+    public void setYCoordinate(Integer yCoordinate) {
+        this.yCoordinate = yCoordinate;
+    }
+
+    public Boolean isTileOccupied() {
+        return this.piece != null;
+    }
+
+    public void removePiece() {
+
+    }
+
+    public Boolean getOpponentTile() {
+        return opponentTile;
+    }
+
+    public void setOpponentTile(Boolean underCheck) {
+        this.opponentTile = underCheck;
+    }
+
+    @Override
+    public Dimension getMinimumSize() {
+        return getPreferredSize();
+    }
+
+    @Override
+    public Dimension getMaximumSize() {
+        return getPreferredSize();
+    }
+
+    @Override
+    public Dimension getPreferredSize() {
+        return new Dimension(100, 100);
+    }
+}
