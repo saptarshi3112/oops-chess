@@ -27,9 +27,7 @@ public class Tile extends JPanel {
             setBackground(Color.GRAY);
         }
 
-        if (p != null) {
-            this.setPiece(p);
-        }
+        this.setPiece(p);
 
     }
 
@@ -68,10 +66,27 @@ public class Tile extends JPanel {
     }
 
     public void setPiece(Piece piece) {
-        this.piece = piece;
-        ImageIcon img = new javax.swing.ImageIcon(this.getClass().getResource(piece.getImgPath()));
-        logo = new JLabel(img);
+        if (piece != null) {
+            this.piece = piece;
+            ImageIcon img = new javax.swing.ImageIcon(this.getClass().getResource(piece.getImgPath()));
+            logo = new JLabel(img);
+        } else {
+            this.piece = null;
+            logo = new JLabel();
+        }
         this.add(logo);
+    }
+
+    public void changePiece(Piece p) {
+        this.piece = p;
+        ImageIcon img = new javax.swing.ImageIcon(this.getClass().getResource(piece.getImgPath()));
+        this.logo.setIcon(img);
+        this.logo.setHorizontalAlignment(JLabel.CENTER);
+    }
+
+    public void removePiece() {
+        this.piece = null;
+        this.logo.setIcon(null);
     }
 
     public Boolean getHasNextMove() {
@@ -104,10 +119,6 @@ public class Tile extends JPanel {
 
     public Boolean isTileOccupied() {
         return this.piece != null;
-    }
-
-    public void removePiece() {
-
     }
 
     public Boolean getOpponentTile() {

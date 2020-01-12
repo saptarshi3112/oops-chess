@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.beans.BeanInfo;
 import java.util.ArrayList;
 
 public class GameBoard extends JPanel implements MouseListener, ActionListener {
@@ -34,27 +35,37 @@ public class GameBoard extends JPanel implements MouseListener, ActionListener {
         wk2 = new Knight("WK2", "White_Knight.png", Team.WHITE, "KNIGHT");
 
         br1 = new Rook("BR1", "Black_Rook.png", Team.BLACK, "ROOK");
+        br2 = new Rook("BR2", "Black_Rook.png", Team.BLACK, "ROOK");
+
         wr1 = new Rook("WR1", "White_Rook.png", Team.WHITE, "ROOK");
+        wr2 = new Rook("WR2", "White_Rook.png", Team.WHITE, "ROOK");
 
         bb1 = new Bishop("BB1", "Black_Bishop.png", Team.BLACK, "BISHOP");
+        bb2 = new Bishop("BB2", "Black_Bishop.png", Team.BLACK, "BISHOP");
+
+        wb1 = new Bishop("WB1", "White_Bishop.png", Team.WHITE, "BISHOP");
+        wb2 = new Bishop("WB2", "White_Bishop.png", Team.WHITE, "BISHOP");
 
         this.setLayout(new GridLayout(8, 8));
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
                 Piece p = null;
 
-                if ((i == 0 && j == 1) || (i == 0 && j == 6)) {
-                    p = bk1;
-                } else if ((i == 7 && j == 1) || (i == 7 && j == 6)) {
-                    p = wk1;
-                } else if ((i == 0 && j == 0) || (i == 0 && j == 7)) {
-                    p = br1;
-                } else if ((i == 7 && j == 0) || (i == 7 && j == 7)) {
-                    p = wr1;
-                } else if ((i == 0 && j == 2) || (i == 0 && j == 5)) {
-                    p = bb1;
+                if (i == 0) {
+                    if (j == 0) p = br1;
+                    if (j == 1) p = bk1;
+                    if (j == 2) p = bb1;
+                    if (j == 5) p = bb2;
+                    if (j == 6) p = bk2;
+                    if (j == 7) p = br2;
+                } if (i == 7) {
+                    if (j == 0) p = wr1;
+                    if (j == 1) p = wk1;
+                    if (j == 2) p = wb1;
+                    if (j == 5) p = wb2;
+                    if (j == 6) p = wk2;
+                    if (j == 7) p = wr2;
                 }
-
 
                 Tile t = new Tile(i, j, p);
                 tiles[i][j] = t;
@@ -104,7 +115,6 @@ public class GameBoard extends JPanel implements MouseListener, ActionListener {
             String category = currentTile.getPiece().getCategory();
             int x = currentTile.getXCoordinate(), y = currentTile.getYCoordinate();
             currentTile.setSelectedTile(true);
-
             switch (category) {
                 case ("KNIGHT"):
                     Knight knight = (Knight) currentTile.getPiece();
@@ -121,25 +131,21 @@ public class GameBoard extends JPanel implements MouseListener, ActionListener {
                     markedTiles = rook.calculatePossibleMoves(x, y, tiles, currentTile);
                     makeColorTiles(markedTiles);
                     break;
-                case ("PAWN"):
-                    System.out.println("pawn");
-                    break;
-                case ("QUEEN"):
-                    System.out.println("Queen");
-                    break;
-                case ("KING"):
-                    System.out.println("King");
-                    break;
                 default:
                     break;
             }
+            prev = currentTile;
         } else {
             if (!markedTiles.isEmpty()) {
                 for (Index idx : markedTiles) {
                     Integer xMark = idx.getX(), yMark = idx.getY();
                     if (xMark.equals(currentTile.getXCoordinate()) && yMark.equals(currentTile.getYCoordinate())) {
-                        Tile blank = tiles[xMark][yMark];
-                        System.out.println(blank.getXCoordinate() + "  " + blank.getYCoordinate());
+                        if (prev.isTileOccupied()) {
+                            Tile blank = tiles[xMark][yMark];
+                            blank.changePiece(prev.getPiece());
+                            prev.removePiece();
+                            falseTiles();
+                        }
                     }
                 }
             }

@@ -21,6 +21,19 @@ public abstract class Piece {
         this.category = category;
     }
 
+    static Boolean getaBoolean(int x, int y, Tile[][] tileBoard, Tile currentTile) {
+        if  ((x >= 0 && x < 8) && (y >= 0 && y < 8)) {
+            Piece p = tileBoard[x][y].getPiece();
+            if (p != null) {
+                return !currentTile.getPiece().getColor().equals(p.getColor());
+            } else {
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
+
     public String getCategory() {
         return category;
     }

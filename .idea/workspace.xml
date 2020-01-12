@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ed3e7f5-d31e-49a0-a61d-4c3daa842392" name="Default Changelist" comment="Possible moves, Gui" />
+    <list default="true" id="0ed3e7f5-d31e-49a0-a61d-4c3daa842392" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OopsChess/main/Board/GameBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OopsChess/main/Board/GameBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OopsChess/main/Board/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OopsChess/main/Board/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OopsChess/main/Board/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OopsChess/main/Board/Tile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OopsChess/main/Pieces/Bishop.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OopsChess/main/Pieces/Bishop.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OopsChess/main/Pieces/Piece.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OopsChess/main/Pieces/Piece.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/OopsChess/main/Pieces/Rook.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/OopsChess/main/Pieces/Rook.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Board/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Board/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Board/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Board/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Board/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Board/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pieces/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pieces/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Pieces/Rook.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +108,7 @@
       <workItem from="1578782020299" duration="10987000" />
       <workItem from="1578815615326" duration="3916000" />
       <workItem from="1578821336496" duration="24967000" />
-      <workItem from="1578855840328" duration="670000" />
+      <workItem from="1578855840328" duration="8686000" />
     </task>
     <task id="LOCAL-00001" summary="Possible moves, Gui">
       <created>1578855337770</created>
@@ -102,7 +117,21 @@
       <option name="project" value="LOCAL" />
       <updated>1578855337770</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Possible moves, Gui">
+      <created>1578858597107</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578858597107</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Possible moves, Gui">
+      <created>1578858610355</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1578858610355</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,50 +153,50 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="801" y="265" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1578854514032" />
-    <state x="558" y="149" width="860" height="807" key="CommitChangelistDialog2" timestamp="1578858596530">
+    <state x="558" y="149" width="860" height="807" key="CommitChangelistDialog2" timestamp="1578858610182">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="558" y="149" width="860" height="807" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1578858596530" />
+    <state x="558" y="149" width="860" height="807" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1578858610182" />
     <state x="765" y="296" width="447" height="513" key="FileChooserDialogImpl" timestamp="1578858543991">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="765" y="296" width="447" height="513" key="FileChooserDialogImpl/67.27.1853.1053@67.27.1853.1053" timestamp="1578858543991" />
-    <state width="1807" height="176" key="GridCell.Tab.0.bottom" timestamp="1578855041895">
+    <state width="1807" height="207" key="GridCell.Tab.0.bottom" timestamp="1578866844168">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="176" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1578855041895" />
+    <state width="1807" height="207" key="GridCell.Tab.0.bottom/67.27.1853.1053@67.27.1853.1053" timestamp="1578866844168" />
     <state width="1807" height="278" key="GridCell.Tab.0.bottom/67.27.3773.1053@67.27.3773.1053" timestamp="1578842053563" />
-    <state width="1807" height="176" key="GridCell.Tab.0.center" timestamp="1578855041894">
+    <state width="1807" height="207" key="GridCell.Tab.0.center" timestamp="1578866844166">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="176" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1578855041894" />
+    <state width="1807" height="207" key="GridCell.Tab.0.center/67.27.1853.1053@67.27.1853.1053" timestamp="1578866844166" />
     <state width="1807" height="278" key="GridCell.Tab.0.center/67.27.3773.1053@67.27.3773.1053" timestamp="1578842053561" />
-    <state width="1807" height="176" key="GridCell.Tab.0.left" timestamp="1578855041894">
+    <state width="1807" height="207" key="GridCell.Tab.0.left" timestamp="1578866844165">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="176" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1578855041894" />
+    <state width="1807" height="207" key="GridCell.Tab.0.left/67.27.1853.1053@67.27.1853.1053" timestamp="1578866844165" />
     <state width="1807" height="278" key="GridCell.Tab.0.left/67.27.3773.1053@67.27.3773.1053" timestamp="1578842053560" />
-    <state width="1807" height="176" key="GridCell.Tab.0.right" timestamp="1578855041895">
+    <state width="1807" height="207" key="GridCell.Tab.0.right" timestamp="1578866844167">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state width="1807" height="176" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1578855041895" />
+    <state width="1807" height="207" key="GridCell.Tab.0.right/67.27.1853.1053@67.27.1853.1053" timestamp="1578866844167" />
     <state width="1807" height="278" key="GridCell.Tab.0.right/67.27.3773.1053@67.27.3773.1053" timestamp="1578842053562" />
     <state x="482" y="187" key="SettingsEditor" timestamp="1578855874066">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="482" y="187" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1578855874066" />
-    <state x="588" y="277" width="800" height="551" key="Vcs.Push.Dialog.v2" timestamp="1578855379811">
+    <state x="588" y="277" width="800" height="551" key="Vcs.Push.Dialog.v2" timestamp="1578858634910">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="588" y="277" width="800" height="551" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1578855379811" />
+    <state x="588" y="277" width="800" height="551" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1578858634910" />
     <state x="761" y="472" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578855515821">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="761" y="472" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1853.1053@67.27.1853.1053" timestamp="1578855515821" />
-    <state x="623" y="296" width="524" height="468" key="extract.method.dialog" timestamp="1578854898688">
+    <state x="623" y="296" width="524" height="468" key="extract.method.dialog" timestamp="1578859940755">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="623" y="296" width="524" height="468" key="extract.method.dialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578854898688" />
+    <state x="623" y="296" width="524" height="468" key="extract.method.dialog/67.27.1853.1053@67.27.1853.1053" timestamp="1578859940755" />
     <state x="738" y="171" width="500" height="762" key="refactoring.ChangeSignatureDialog" timestamp="1578783777617">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
