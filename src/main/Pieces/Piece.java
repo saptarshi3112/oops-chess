@@ -21,7 +21,7 @@ public abstract class Piece {
         this.category = category;
     }
 
-    static Boolean getaBoolean(int x, int y, Tile[][] tileBoard, Tile currentTile) {
+    static Boolean getPieceBoolean(int x, int y, Tile[][] tileBoard, Tile currentTile) {
         if  ((x >= 0 && x < 8) && (y >= 0 && y < 8)) {
             Piece p = tileBoard[x][y].getPiece();
             if (p != null) {

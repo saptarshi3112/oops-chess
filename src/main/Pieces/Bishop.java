@@ -15,7 +15,7 @@ public class Bishop extends Piece {
 
     @Override
     public Boolean isSafe(int x, int y, Tile[][] tileBoard, Tile currentTile) {
-        return getaBoolean(x, y, tileBoard, currentTile);
+        return getPieceBoolean(x, y, tileBoard, currentTile);
     }
 
     @Override
