@@ -7,6 +7,9 @@ import main.Utility.Team;
 import java.util.ArrayList;
 
 public class Pawn extends Piece {
+
+    Boolean hasMoved = false;
+
     public Pawn(String name, String imgPath, Team color, String category) {
         super(name, imgPath, color, category);
     }

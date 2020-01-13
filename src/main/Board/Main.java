@@ -20,6 +20,7 @@ public class Main extends JFrame implements KeyListener, MouseListener {
     public static Knight bk1, bk2, wk1, wk2;
     public static Rook br1, br2, wr1, wr2;
     public static Bishop bb1, bb2, wb1, wb2;
+    public static Queen bq1, wq1;
     public static Pawn[] blackPawn = new Pawn[8], whitePawn = new Pawn[8];
 
     private static Tile [][]tiles = new Tile[8][8];
@@ -40,6 +41,7 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                     if (j == 0) p = br1;
                     if (j == 1) p = bk1;
                     if (j == 2) p = bb1;
+                    if (j == 3) p = bq1;
                     if (j == 5) p = bb2;
                     if (j == 6) p = bk2;
                     if (j == 7) p = br2;
@@ -47,6 +49,7 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                     if (j == 0) p = wr1;
                     if (j == 1) p = wk1;
                     if (j == 2) p = wb1;
+                    if (j == 3) p = wq1;
                     if (j == 5) p = wb2;
                     if (j == 6) p = wk2;
                     if (j == 7) p = wr2;
@@ -97,6 +100,7 @@ public class Main extends JFrame implements KeyListener, MouseListener {
         String category = currentTile.getPiece().getCategory();
         int x = currentTile.getXCoordinate(), y = currentTile.getYCoordinate();
         currentTile.setSelectedTile(true);
+        markedTiles.clear();
         switch (category) {
             case ("KNIGHT"):
                 Knight knight = (Knight) currentTile.getPiece();
@@ -116,6 +120,8 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                 makeColorTiles(markedTiles);
                 stateManager.insert(tiles);
                 break;
+            case ("QUEEN"):
+                break;
             default:
                 break;
         }
@@ -126,21 +132,21 @@ public class Main extends JFrame implements KeyListener, MouseListener {
 
         bk1 = new Knight("BK1", "Black_Knight.png", Team.BLACK, "KNIGHT");
         bk2 = new Knight("BK2", "Black_Knight.png", Team.BLACK, "KNIGHT");
-
         wk1 = new Knight("WK1", "White_Knight.png", Team.WHITE, "KNIGHT");
         wk2 = new Knight("WK2", "White_Knight.png", Team.WHITE, "KNIGHT");
 
         br1 = new Rook("BR1", "Black_Rook.png", Team.BLACK, "ROOK");
         br2 = new Rook("BR2", "Black_Rook.png", Team.BLACK, "ROOK");
-
         wr1 = new Rook("WR1", "White_Rook.png", Team.WHITE, "ROOK");
         wr2 = new Rook("WR2", "White_Rook.png", Team.WHITE, "ROOK");
 
         bb1 = new Bishop("BB1", "Black_Bishop.png", Team.BLACK, "BISHOP");
         bb2 = new Bishop("BB2", "Black_Bishop.png", Team.BLACK, "BISHOP");
-
         wb1 = new Bishop("WB1", "White_Bishop.png", Team.WHITE, "BISHOP");
         wb2 = new Bishop("WB2", "White_Bishop.png", Team.WHITE, "BISHOP");
+
+        bq1 = new Queen("BQ1", "Black_Queen.png", Team.BLACK, "QUEEN");
+        wq1 = new Queen("WQ1", "White_Queen.png", Team.WHITE, "QUEEN");
 
         new Main();
     }
