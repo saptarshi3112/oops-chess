@@ -11,6 +11,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+
 import java.util.ArrayList;
 
 public class Main extends JFrame implements KeyListener, MouseListener {
@@ -121,6 +122,10 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                 stateManager.insert(tiles);
                 break;
             case ("QUEEN"):
+                Queen queen = (Queen) currentTile.getPiece();
+                markedTiles = queen.calculatePossibleMoves(x, y, tiles, currentTile);
+                makeColorTiles(markedTiles);
+                stateManager.insert(tiles);
                 break;
             default:
                 break;
