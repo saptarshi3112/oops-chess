@@ -20,7 +20,7 @@ public class Main extends JFrame implements KeyListener, MouseListener {
     public static Knight bk1, bk2, wk1, wk2;
     public static Rook br1, br2, wr1, wr2;
     public static Bishop bb1, bb2, wb1, wb2;
-    public static Pawn[] blackPawn = new Pawn[8], whitePawn = new Pawn[8];;
+    public static Pawn[] blackPawn = new Pawn[8], whitePawn = new Pawn[8];
 
     private static Tile [][]tiles = new Tile[8][8];
     private static Tile currentTile = null, prev = null;
