@@ -33,8 +33,28 @@ public class StateManager {
         new_node.prev = this.lastIndex;
     }
 
+    public Integer getSize() {
+        StateNode n = this.head;
+        Integer size = 0;
+        while (n != null) {
+            size += 1;
+            n = n.next;
+        }
+        return size;
+    }
+
     public boolean isFirstMove() {
         return false;
+    }
+
+    public Tile[][] getPreviousMove() {
+        if (lastIndex.prev != null) {
+            System.out.println(lastIndex.prev);
+            return lastIndex.prev.val;
+        }
+        else {
+            return null;
+        }
     }
 
 }

@@ -159,6 +159,10 @@ public class King extends Piece {
         }
     }
 
+    public Boolean isChecked(int x, int y, Tile[][] tileBoard, Tile currentTile) {
+        return calculatePossibleMoves(x, y, tileBoard, currentTile).size() == 0;
+    }
+
     @Override
     public ArrayList<Index> calculatePossibleMoves(int x, int y, Tile[][] tileBoard, Tile currentTile) {
         ArrayList <Index> moves = new ArrayList<>();

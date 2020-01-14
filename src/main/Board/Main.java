@@ -67,12 +67,12 @@ public class Main extends JFrame implements KeyListener, MouseListener {
             }
         }
 
+        this.setFocusable(true);
+        this.addKeyListener(this);
         this.add(panel);
-
         this.pack();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
-        this.setFocusable(true);
         this.setVisible(true);
     }
 
@@ -110,31 +110,26 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                 Knight knight = (Knight) currentTile.getPiece();
                 markedTiles = knight.calculatePossibleMoves(x, y, tiles, currentTile);
                 makeColorTiles(markedTiles);
-                stateManager.insert(tiles);
                 break;
             case ("BISHOP"):
                 Bishop bishop = (Bishop) currentTile.getPiece();
                 markedTiles = bishop.calculatePossibleMoves(x, y, tiles, currentTile);
                 makeColorTiles(markedTiles);
-                stateManager.insert(tiles);
                 break;
             case ("ROOK"):
                 Rook rook = (Rook) currentTile.getPiece();
                 markedTiles = rook.calculatePossibleMoves(x, y, tiles, currentTile);
                 makeColorTiles(markedTiles);
-                stateManager.insert(tiles);
                 break;
             case ("QUEEN"):
                 Queen queen = (Queen) currentTile.getPiece();
                 markedTiles = queen.calculatePossibleMoves(x, y, tiles, currentTile);
                 makeColorTiles(markedTiles);
-                stateManager.insert(tiles);
                 break;
             case ("KING"):
                 King king = (King) currentTile.getPiece();
                 markedTiles = king.calculatePossibleMoves(x, y, tiles, currentTile);
                 makeColorTiles(markedTiles);
-                stateManager.insert(tiles);
             default:
                 break;
         }
@@ -169,17 +164,14 @@ public class Main extends JFrame implements KeyListener, MouseListener {
 
     @Override
     public void keyTyped(KeyEvent keyEvent) {
-        System.out.println("ew");
     }
 
     @Override
     public void keyPressed(KeyEvent keyEvent) {
-        System.out.println("ew");
     }
 
     @Override
     public void keyReleased(KeyEvent keyEvent) {
-        System.out.println("ew");
     }
 
     @Override
@@ -202,7 +194,6 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                             prev.removePiece();
                             prev = null;
                             falseTiles();
-                            stateManager.insert(tiles);
                         }
                     }
                 }
@@ -212,7 +203,6 @@ public class Main extends JFrame implements KeyListener, MouseListener {
 
     @Override
     public void mousePressed(MouseEvent mouseEvent) {
-
     }
 
     @Override
