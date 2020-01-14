@@ -11,7 +11,9 @@ public class King extends Piece {
         super(name, imgPath, color, category);
     }
 
-    private Boolean underCheck(int x, int y, Tile[][] tileBoard, Tile currentTile) {
+    // Method to check to if the block is under attack by any of the pieces.
+    // if not only then the king can move to that block
+    private Boolean ifBlockUnderCheck(int x, int y, Tile[][] tileBoard, Tile currentTile) {
         return false;
     }
 
@@ -19,7 +21,7 @@ public class King extends Piece {
     public Boolean isSafe(int x, int y, Tile[][] tileBoard, Tile currentTile) {
         if (x >= 0 && x < 8 && y >= 0 && y < 8) {
             if (tileBoard[x][y].isTileOccupied() && tileBoard[x][y].getPiece().getColor().equals(currentTile.getPiece().getColor())) {
-                return false;
+                return ifBlockUnderCheck(x, y, tileBoard, currentTile);
             } else {
                 return  true;
             }
