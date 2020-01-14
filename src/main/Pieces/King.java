@@ -89,8 +89,41 @@ public class King extends Piece {
             }
         }
 
-        // Check for a rook attack.
+        // Check for a rook or queen attack.
         itrX = x; itrY = y;
+
+        // left
+        while (itrY >= 0) {
+            if (inRange(x, itrY) && checkTileRookOrQueen(x, itrY, tileBoard, currentTile)) {
+                return true;
+            }
+            itrY--;
+        }
+
+        // right
+        while (itrY < yAxis) {
+            if (inRange(x, itrY) && checkTileRookOrQueen(x, itrY, tileBoard, currentTile)) {
+                return true;
+            }
+            itrY++;
+        }
+
+        // top
+        while (itrX >= 0) {
+            if (inRange(itrX, y) && checkTileRookOrQueen(itrX, y, tileBoard, currentTile)) {
+                return true;
+            }
+            itrX--;
+        }
+
+
+        // bottom
+        while (itrX < xAxis) {
+            if (inRange(itrX, y) && checkTileRookOrQueen(itrX, y, tileBoard, currentTile)) {
+                return true;
+            }
+            itrX++;
+        }
 
 
         return false;
@@ -104,17 +137,20 @@ public class King extends Piece {
             if (tileBoard[x][y].isTileOccupied()) {
                 // if there is a friend piece. false else if enemy then
                 if (tileBoard[x][y].getPiece().getColor().equals(currentTile.getPiece().getColor())) {
-                    System.out.println("friend");
                     return false;
                 } else {
-                    return true;
+                    // Enemy under block after kill
+                    if (ifBlockUnderCheck(x, y, tileBoard, currentTile)) {
+                        return false;
+                    } else {
+                        return true;
+                    }
                 }
             } else {
                 // when target tile is empty. // check if it can be attacked by a piece.
                 if (ifBlockUnderCheck(x, y, tileBoard, currentTile)) {
                     return false;
                 } else {
-                    System.out.println("Can move to block. It is free");
                     return true;
                 }
             }

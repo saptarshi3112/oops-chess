@@ -18,10 +18,7 @@ public class Queen extends Piece {
 
     @Override
     public ArrayList<Index> calculatePossibleMoves(int x, int y, Tile[][] tileBoard, Tile currentTile) {
-
         ArrayList <Index> moves = new ArrayList<>();
-
-        // int xAxis = 8, yAxis = 8;
 
         // bottom right x++ y++
         int xItr = x, yItr = y;
