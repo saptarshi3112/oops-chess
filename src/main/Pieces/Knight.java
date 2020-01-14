@@ -15,7 +15,7 @@ public class Knight extends Piece {
 
     @Override
     public Boolean isSafe(int x, int y, Tile[][] tileBoard, Tile currentTile) {
-        if (x >= 0 && x < 8 && y >= 0 && y < 8) {
+        if (x >= 0 && x < xAxis && y >= 0 && y < yAxis) {
             if (tileBoard[x][y].isTileOccupied() && tileBoard[x][y].getPiece().getColor().equals(currentTile.getPiece().getColor())) {
                 return false;
             } else if (tileBoard[x][y].isTileOccupied() && !tileBoard[x][y].getPiece().getColor().equals(currentTile.getPiece().getColor())) {
@@ -33,12 +33,12 @@ public class Knight extends Piece {
 
         ArrayList <Index> moves = new ArrayList<>();
 
-        int []X = {x+1, x+1, x+2, x+2, x-1, x-1, x-2, x-2};
-        int []Y = {y-2, y+2, y-1, y+1, y-2, y+2, y-1, y+1};
+        int []xMoves = {x+1, x+1, x+2, x+2, x-1, x-1, x-2, x-2};
+        int []yMoves = {y-2, y+2, y-1, y+1, y-2, y+2, y-1, y+1};
 
         for (int i = 0; i < 8; i++) {
-            if (this.isSafe(X[i], Y[i], tileBoard, currentTile)) {
-                moves.add(new Index(X[i], Y[i]));
+            if (this.isSafe(xMoves[i], yMoves[i], tileBoard, currentTile)) {
+                moves.add(new Index(xMoves[i], yMoves[i]));
             }
         }
 

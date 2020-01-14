@@ -12,6 +12,29 @@ public abstract class Piece {
     private String imgPath;
     private String category;
 
+    protected static final int xAxis = 8;
+    protected static final int yAxis = 8;
+
+    protected static Boolean inRange(int x, int y) {
+        return (x >= 0 && x < xAxis && y >= 0 && y < yAxis);
+    }
+
+    protected Boolean isEnemyKnight(int x, int y, Tile[][] tileBoard, Tile currentTile) {
+        return tileBoard[x][y].isTileOccupied() && (!tileBoard[x][y].getPiece().getColor().equals(currentTile.getPiece().getColor())) && (tileBoard[x][y].getPiece().getCategory().equals("KNIGHT"));
+    }
+
+    protected Boolean isEnemyQueen (int x, int y, Tile[][] tileBoard, Tile currentTile) {
+        return (!tileBoard[x][y].getPiece().getColor().equals(currentTile.getPiece().getColor())) && (tileBoard[x][y].getPiece().getCategory().equals("QUEEN"));
+    }
+
+    protected Boolean isEnemyRook (int x, int y, Tile[][] tileBoard, Tile currentTile) {
+        return (!tileBoard[x][y].getPiece().getColor().equals(currentTile.getPiece().getColor())) && (tileBoard[x][y].getPiece().getCategory().equals("ROOK"));
+    }
+
+    protected Boolean isEnemyBishop (int x, int y, Tile[][] tileBoard, Tile currentTile) {
+        return (!tileBoard[x][y].getPiece().getColor().equals(currentTile.getPiece().getColor())) && (tileBoard[x][y].getPiece().getCategory().equals("BISHOP"));
+    }
+
     public abstract ArrayList <Index> calculatePossibleMoves(int x, int y, Tile[][]tileBoard, Tile currentTile);
 
     public Piece(String name, String imgPath, Team color, String category) {
@@ -22,7 +45,7 @@ public abstract class Piece {
     }
 
     protected static Boolean getPieceBoolean(int x, int y, Tile[][] tileBoard, Tile currentTile) {
-        if  ((x >= 0 && x < 8) && (y >= 0 && y < 8)) {
+        if  (inRange(x, y)) {
             Piece p = tileBoard[x][y].getPiece();
             if (p != null) {
                 return !currentTile.getPiece().getColor().equals(p.getColor());

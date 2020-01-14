@@ -21,7 +21,7 @@ public class Queen extends Piece {
 
         ArrayList <Index> moves = new ArrayList<>();
 
-        int xAxis = 8, yAxis = 8;
+        // int xAxis = 8, yAxis = 8;
 
         // bottom right x++ y++
         int xItr = x, yItr = y;

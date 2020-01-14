@@ -21,7 +21,6 @@ public class Rook extends Piece {
     public ArrayList <Index> calculatePossibleMoves(int x, int y, Tile[][] tileBoard, Tile currentTile) {
 
         ArrayList <Index> moves = new ArrayList<>();
-        int xAxis = 8, yAxis = 8;
 
         // right
         int itr = y;
