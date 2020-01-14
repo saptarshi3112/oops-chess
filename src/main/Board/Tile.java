@@ -4,6 +4,7 @@ import main.Pieces.Piece;
 
 import javax.swing.*;
 import java.awt.*;
+import javax.swing.ImageIcon;
 
 public class Tile extends JPanel {
 
@@ -68,8 +69,9 @@ public class Tile extends JPanel {
     public void setPiece(Piece piece) {
         if (piece != null) {
             this.piece = piece;
-            ImageIcon img = new javax.swing.ImageIcon(this.getClass().getResource(piece.getImgPath()));
+            ImageIcon img = new ImageIcon(this.getClass().getResource(piece.getImgPath()));
             logo = new JLabel(img);
+            this.logo.setHorizontalAlignment(JLabel.CENTER);
         } else {
             this.piece = null;
             logo = new JLabel();
@@ -79,7 +81,7 @@ public class Tile extends JPanel {
 
     public void changePiece(Piece p) {
         this.piece = p;
-        ImageIcon img = new javax.swing.ImageIcon(this.getClass().getResource(piece.getImgPath()));
+        ImageIcon img = new ImageIcon(this.getClass().getResource(piece.getImgPath()));
         this.logo.setIcon(img);
         this.logo.setHorizontalAlignment(JLabel.CENTER);
     }
