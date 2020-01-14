@@ -22,6 +22,7 @@ public class Main extends JFrame implements KeyListener, MouseListener {
     public static Rook br1, br2, wr1, wr2;
     public static Bishop bb1, bb2, wb1, wb2;
     public static Queen bq1, wq1;
+    public static King bkg1, wkg1;
     public static Pawn[] blackPawn = new Pawn[8], whitePawn = new Pawn[8];
 
     private static Tile [][]tiles = new Tile[8][8];
@@ -43,6 +44,7 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                     if (j == 1) p = bk1;
                     if (j == 2) p = bb1;
                     if (j == 3) p = bq1;
+                    if (j == 4) p = bkg1;
                     if (j == 5) p = bb2;
                     if (j == 6) p = bk2;
                     if (j == 7) p = br2;
@@ -51,6 +53,7 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                     if (j == 1) p = wk1;
                     if (j == 2) p = wb1;
                     if (j == 3) p = wq1;
+                    if (j == 4) p = wkg1;
                     if (j == 5) p = wb2;
                     if (j == 6) p = wk2;
                     if (j == 7) p = wr2;
@@ -127,6 +130,11 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                 makeColorTiles(markedTiles);
                 stateManager.insert(tiles);
                 break;
+            case ("KING"):
+                King king = (King) currentTile.getPiece();
+                markedTiles = king.calculatePossibleMoves(x, y, tiles, currentTile);
+                makeColorTiles(markedTiles);
+                stateManager.insert(tiles);
             default:
                 break;
         }
@@ -152,6 +160,9 @@ public class Main extends JFrame implements KeyListener, MouseListener {
 
         bq1 = new Queen("BQ1", "Black_Queen.png", Team.BLACK, "QUEEN");
         wq1 = new Queen("WQ1", "White_Queen.png", Team.WHITE, "QUEEN");
+
+        bkg1 = new King("BKG1", "Black_King.png", Team.BLACK, "KING");
+        wkg1 = new King("WKG1", "White_King.png", Team.WHITE, "KING");
 
         new Main();
     }
