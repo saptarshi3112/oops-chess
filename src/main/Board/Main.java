@@ -185,9 +185,11 @@ public class Main extends JFrame implements KeyListener, MouseListener {
 
         new Main();
 
+        // two players will randomly choose their moves.
         p1 = new Player("Bubai", Team.WHITE);
         p2 = new Player("Saptarshi", Team.BLACK);
 
+        // current player set to player 1
         currentPlayer = p1;
 
     }
@@ -228,9 +230,11 @@ public class Main extends JFrame implements KeyListener, MouseListener {
 
                             if (prev.isTileOccupied() && prev.getPiece().getCategory().equals("KING")) {
                                 if (prev.getPiece().getColor().equals(Team.BLACK)) {
+                                    // set the black king x and y.
                                     bk1Position.setX(xMark);
                                     bk1Position.setY(yMark);
                                 } else {
+                                    // set the white king x and y.
                                     wk1Position.setX(xMark);
                                     wk1Position.setY(yMark);
                                 }

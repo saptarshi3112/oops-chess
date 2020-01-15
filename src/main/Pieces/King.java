@@ -133,7 +133,7 @@ public class King extends Piece {
     // Method to check if the piece can in that block or not.
     @Override
     public Boolean isSafe(int x, int y, Tile[][] tileBoard, Tile currentTile) {
-        if (x >= 0 && x < 8 && y >= 0 && y < 8) {
+        if (inRange(x, y)) {
             if (tileBoard[x][y].isTileOccupied()) {
                 // if there is a friend piece. false else if enemy then
                 if (tileBoard[x][y].getPiece().getColor().equals(currentTile.getPiece().getColor())) {

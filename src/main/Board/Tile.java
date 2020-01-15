@@ -17,17 +17,24 @@ public class Tile extends JPanel {
 
     public Tile(int x, int y, Piece p) {
 
+        // coordinates of the block.
         this.xCoordinate = x;
         this.yCoordinate = y;
 
+        // border layout.
         this.setLayout(new BorderLayout());
+
+        // border of color black.
         this.setBorder(BorderFactory.createLineBorder(Color.black));
+
+        // set color of tiles to black or white.
         if ((x+y)%2 == 0) {
             setBackground(Color.WHITE);
         } else {
             setBackground(Color.GRAY);
         }
 
+        // set the piece.
         this.setPiece(p);
 
     }
@@ -67,6 +74,8 @@ public class Tile extends JPanel {
     }
 
     public void setPiece(Piece piece) {
+        // if the piece is not null, then it will contain an icon.
+        // else not .
         if (piece != null) {
             this.piece = piece;
             ImageIcon img = new ImageIcon(this.getClass().getResource(piece.getImgPath()));
@@ -76,6 +85,8 @@ public class Tile extends JPanel {
             this.piece = null;
             logo = new JLabel();
         }
+
+        // add the logo to the tile.
         this.add(logo);
     }
 

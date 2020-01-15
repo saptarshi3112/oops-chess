@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ed3e7f5-d31e-49a0-a61d-4c3daa842392" name="Default Changelist" comment="StateManager init" />
+    <list default="true" id="0ed3e7f5-d31e-49a0-a61d-4c3daa842392" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Board/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Board/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Board/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Board/Tile.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,6 +128,7 @@
       <workItem from="1579014739772" duration="3472000" />
       <workItem from="1579048182197" duration="3230000" />
       <workItem from="1579065812693" duration="84000" />
+      <workItem from="1579106556920" duration="347000" />
     </task>
     <task id="LOCAL-00001" summary="Possible moves, Gui">
       <created>1578855337770</created>
@@ -251,7 +256,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579018607877</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="class commit">
+      <created>1579106681708</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1579106681708</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +287,8 @@
     <MESSAGE value="xclude" />
     <MESSAGE value="king rook and queen attack" />
     <MESSAGE value="StateManager init" />
-    <option name="LAST_COMMIT_MESSAGE" value="StateManager init" />
+    <MESSAGE value="class commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="class commit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="588" y="214" width="800" height="677" key="#Notifications" timestamp="1578875884620">
@@ -287,11 +300,11 @@
     </state>
     <state x="801" y="265" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1579017084915" />
     <state x="801" y="265" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/67.27.1853.1053@67.27.1853.1053" timestamp="1579048923659" />
-    <state x="532" y="138" width="864" height="980" key="CommitChangelistDialog2" timestamp="1579051626603">
+    <state x="482" y="154" width="864" height="980" key="CommitChangelistDialog2" timestamp="1579106680910">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="532" y="100" width="864" height="980" key="CommitChangelistDialog2/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1579018607672" />
-    <state x="532" y="138" width="860" height="807" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1579051626603" />
+    <state x="482" y="154" width="860" height="807" key="CommitChangelistDialog2/67.27.1853.1053@67.27.1853.1053" timestamp="1579106680910" />
     <state x="765" y="296" width="447" height="513" key="FileChooserDialogImpl" timestamp="1578880483054">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
@@ -340,11 +353,11 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="350" y="141" key="SettingsEditor/67.27.1853.1053@67.27.1853.1053" timestamp="1579006154292" />
-    <state x="588" y="277" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1579018610843">
+    <state x="588" y="277" width="800" height="536" key="Vcs.Push.Dialog.v2" timestamp="1579106686015">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="588" y="277" width="800" height="536" key="Vcs.Push.Dialog.v2/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1579018610843" />
-    <state x="588" y="277" width="800" height="551" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1579009989360" />
+    <state x="588" y="277" width="800" height="551" key="Vcs.Push.Dialog.v2/67.27.1853.1053@67.27.1853.1053" timestamp="1579106686015" />
     <state x="761" y="472" width="454" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1578855515821">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
