@@ -220,7 +220,6 @@ public class Main extends JFrame implements KeyListener, MouseListener {
             // swap moves //
             tileMarker();
         } else {
-
             if (!markedTiles.isEmpty()) {
                 for (Index idx : markedTiles) {
                     Integer xMark = idx.getX(), yMark = idx.getY();
