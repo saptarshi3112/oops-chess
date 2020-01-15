@@ -7,10 +7,7 @@ import main.Utility.Team;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 
 import java.util.ArrayList;
 
@@ -29,6 +26,11 @@ public class Main extends JFrame implements KeyListener, MouseListener {
     private static Tile currentTile = null, prev = null;
     private static ArrayList<Index> markedTiles = new ArrayList<>();
 
+    private static Player p1, p2, currentPlayer;
+
+    private static Index bk1Position;
+    private static Index wk1Position;
+
     Main() {
         this.setTitle("OopsChess");
 
@@ -44,7 +46,10 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                     if (j == 1) p = bk1;
                     if (j == 2) p = bb1;
                     if (j == 3) p = bq1;
-                    if (j == 4) p = bkg1;
+                    if (j == 4) {
+                        p = bkg1;
+                        bk1Position = new Index(i, j);
+                    }
                     if (j == 5) p = bb2;
                     if (j == 6) p = bk2;
                     if (j == 7) p = br2;
@@ -53,7 +58,10 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                     if (j == 1) p = wk1;
                     if (j == 2) p = wb1;
                     if (j == 3) p = wq1;
-                    if (j == 4) p = wkg1;
+                    if (j == 4) {
+                        p = wkg1;
+                        wk1Position = new Index(i, j);
+                    }
                     if (j == 5) p = wb2;
                     if (j == 6) p = wk2;
                     if (j == 7) p = wr2;
@@ -136,6 +144,22 @@ public class Main extends JFrame implements KeyListener, MouseListener {
         prev = currentTile;
     }
 
+    private static void swapPlayer() {
+        if (currentPlayer.equals(p1)) {
+            currentPlayer = p2;
+        } else {
+            currentPlayer = p1;
+        }
+    }
+
+    private static Boolean canKingMove() {
+        if (currentPlayer.getTeam().equals(Team.BLACK)) {
+            return !bk1.calculatePossibleMoves(bk1Position.getX(), bk1Position.getY(), tiles, currentTile).isEmpty();
+        } else {
+            return !wk1.calculatePossibleMoves(wk1Position.getX(), wk1Position.getY(), tiles, currentTile).isEmpty();
+        }
+    }
+
     public static void main(String[] args) {
 
         bk1 = new Knight("BK1", "Black_Knight.png", Team.BLACK, "KNIGHT");
@@ -160,6 +184,12 @@ public class Main extends JFrame implements KeyListener, MouseListener {
         wkg1 = new King("WKG1", "White_King.png", Team.WHITE, "KING");
 
         new Main();
+
+        p1 = new Player("Bubai", Team.WHITE);
+        p2 = new Player("Saptarshi", Team.BLACK);
+
+        currentPlayer = p1;
+
     }
 
     @Override
@@ -178,16 +208,35 @@ public class Main extends JFrame implements KeyListener, MouseListener {
     public void mouseClicked(MouseEvent mouseEvent) {
 
         currentTile = (Tile)mouseEvent.getSource();
+
+        // If the tile is occupied and the piece is of the same color.
+        // or the tile is blank. for movement
+        // or to attack enemy tile. when the prev is not null.
+
         if (currentTile.isTileOccupied() && prev == null) {
+            // first move //
             tileMarker();
         } else if (currentTile.isTileOccupied() && prev != null && currentTile.getPiece().getColor().equals(prev.getPiece().getColor())) {
+            // swap moves //
             tileMarker();
         } else {
+
             if (!markedTiles.isEmpty()) {
                 for (Index idx : markedTiles) {
                     Integer xMark = idx.getX(), yMark = idx.getY();
                     if (xMark.equals(currentTile.getXCoordinate()) && yMark.equals(currentTile.getYCoordinate())) {
                         if (prev != null && prev.isTileOccupied()) {
+
+                            if (prev.isTileOccupied() && prev.getPiece().getCategory().equals("KING")) {
+                                if (prev.getPiece().getColor().equals(Team.BLACK)) {
+                                    bk1Position.setX(xMark);
+                                    bk1Position.setY(yMark);
+                                } else {
+                                    wk1Position.setX(xMark);
+                                    wk1Position.setY(yMark);
+                                }
+                            }
+
                             Tile blank = tiles[xMark][yMark];
                             blank.changePiece(prev.getPiece());
                             tiles[xMark][yMark] = blank;

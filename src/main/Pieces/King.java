@@ -140,19 +140,11 @@ public class King extends Piece {
                     return false;
                 } else {
                     // Enemy under block after kill
-                    if (ifBlockUnderCheck(x, y, tileBoard, currentTile)) {
-                        return false;
-                    } else {
-                        return true;
-                    }
+                    return !ifBlockUnderCheck(x, y, tileBoard, currentTile);
                 }
             } else {
                 // when target tile is empty. // check if it can be attacked by a piece.
-                if (ifBlockUnderCheck(x, y, tileBoard, currentTile)) {
-                    return false;
-                } else {
-                    return true;
-                }
+                return !ifBlockUnderCheck(x, y, tileBoard, currentTile);
             }
         } else {
             return false;

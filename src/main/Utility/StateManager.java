@@ -35,7 +35,7 @@ public class StateManager {
 
     public Integer getSize() {
         StateNode n = this.head;
-        Integer size = 0;
+        int size = 0;
         while (n != null) {
             size += 1;
             n = n.next;
