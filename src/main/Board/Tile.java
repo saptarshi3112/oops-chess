@@ -8,9 +8,16 @@ import javax.swing.ImageIcon;
 
 public class Tile extends JPanel {
 
+    // X and Y coordinate.
     Integer xCoordinate, yCoordinate;
+
+    // Icon of the piece.
     private JLabel logo;
+
+    // Piece set in the tile.
     private Piece piece;
+
+    // Boolean values to decide the color of the tile.
     private Boolean hasNextMove = false;
     private Boolean isSelectedTile = false;
     private Boolean opponentTile = false;
@@ -100,6 +107,10 @@ public class Tile extends JPanel {
     public void removePiece() {
         this.piece = null;
         this.logo.setIcon(null);
+    }
+
+    public void pawnPromotion () {
+
     }
 
     public Boolean getHasNextMove() {

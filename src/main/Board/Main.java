@@ -46,6 +46,7 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                     if (j == 1) p = bk1;
                     if (j == 2) p = bb1;
                     if (j == 3) p = bq1;
+                    // store the index of the black king.
                     if (j == 4) {
                         p = bkg1;
                         bk1Position = new Index(i, j);
@@ -53,11 +54,26 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                     if (j == 5) p = bb2;
                     if (j == 6) p = bk2;
                     if (j == 7) p = br2;
-                } if (i == 7) {
+                }
+
+                if (i == 1) {
+                    if (j == 0) p = blackPawn[0];
+                    if (j == 1) p = blackPawn[1];
+                    if (j == 2) p = blackPawn[2];
+                    if (j == 3) p = blackPawn[3];
+                    if (j == 4) p = blackPawn[4];
+                    if (j == 5) p = blackPawn[5];
+                    if (j == 6) p = blackPawn[6];
+                    if (j == 7) p = blackPawn[7];
+                }
+
+                // White pieces.
+                if (i == 7) {
                     if (j == 0) p = wr1;
                     if (j == 1) p = wk1;
                     if (j == 2) p = wb1;
                     if (j == 3) p = wq1;
+                    // store the index of the white king.
                     if (j == 4) {
                         p = wkg1;
                         wk1Position = new Index(i, j);
@@ -65,6 +81,17 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                     if (j == 5) p = wb2;
                     if (j == 6) p = wk2;
                     if (j == 7) p = wr2;
+                }
+
+                if (i == 6) {
+                    if (j == 0) p = whitePawn[0];
+                    if (j == 1) p = whitePawn[1];
+                    if (j == 2) p = whitePawn[2];
+                    if (j == 3) p = whitePawn[3];
+                    if (j == 4) p = whitePawn[4];
+                    if (j == 5) p = whitePawn[5];
+                    if (j == 6) p = whitePawn[6];
+                    if (j == 7) p = whitePawn[7];
                 }
 
                 Tile t = new Tile(i, j, p);
@@ -138,6 +165,11 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                 King king = (King) currentTile.getPiece();
                 markedTiles = king.calculatePossibleMoves(x, y, tiles, currentTile);
                 makeColorTiles(markedTiles);
+            case ("PAWN"):
+                Pawn pawn = (Pawn) currentTile.getPiece();
+                markedTiles = pawn.calculatePossibleMoves(x, y, tiles, currentTile);
+                makeColorTiles(markedTiles);
+
             default:
                 break;
         }
@@ -182,6 +214,18 @@ public class Main extends JFrame implements KeyListener, MouseListener {
 
         bkg1 = new King("BKG1", "Black_King.png", Team.BLACK, "KING");
         wkg1 = new King("WKG1", "White_King.png", Team.WHITE, "KING");
+
+        // Initialize black pawns.
+        for (int i = 0; i < 8; i++) {
+            String pawnName = "BP"+(i+1);
+            blackPawn[i] = new Pawn(pawnName, "Black_Pawn.png", Team.BLACK, "PAWN");
+        }
+
+        // Initialize white pawns.
+        for (int i = 0; i < 8; i++) {
+            String pawnName = "WP"+(i+1);
+            whitePawn[i] = new Pawn(pawnName, "White_Pawn.png", Team.WHITE, "PAWN");
+        }
 
         new Main();
 
@@ -228,23 +272,19 @@ public class Main extends JFrame implements KeyListener, MouseListener {
                     if (xMark.equals(currentTile.getXCoordinate()) && yMark.equals(currentTile.getYCoordinate())) {
                         if (prev != null && prev.isTileOccupied()) {
 
-                            if (prev.isTileOccupied() && prev.getPiece().getCategory().equals("KING")) {
-                                if (prev.getPiece().getColor().equals(Team.BLACK)) {
-                                    // set the black king x and y.
-                                    bk1Position.setX(xMark);
-                                    bk1Position.setY(yMark);
-                                } else {
-                                    // set the white king x and y.
-                                    wk1Position.setX(xMark);
-                                    wk1Position.setY(yMark);
-                                }
-                            }
-
                             Tile blank = tiles[xMark][yMark];
+
                             blank.changePiece(prev.getPiece());
+
                             tiles[xMark][yMark] = blank;
+
+                            // Remove the piece icon from the current tile.
                             prev.removePiece();
+
+                            // Set prev to null
                             prev = null;
+
+                            // Change the color of the tiles.
                             falseTiles();
                         }
                     }
